@@ -43,7 +43,7 @@ const puppeteer = require('puppeteer');
 
     if (textoTd === '9') {
       encontrouNove = true;
-      contadorTd = 1; // Inicia a contagem a partir do primeiro <td> após "9"
+      contadorTd = 1; 
     } else if (encontrouNove) {
       contadorTd++;
 
@@ -52,7 +52,7 @@ const puppeteer = require('puppeteer');
           
       }else if(contadorTd === 4){
         conteudosTD.push(textoTd);
-        break; // Encontrou o sexto <td> após "9", então saia do loop
+        break; 
       }
       
     }
@@ -63,7 +63,7 @@ const puppeteer = require('puppeteer');
 
     if (textoTd === '1') {
       encontrouNove = true;
-      contadorTd = 1; // Inicia a contagem a partir do primeiro <td> após "1"
+      contadorTd = 1; 
     } else if (encontrouNove) {
       contadorTd++;
 
@@ -72,19 +72,28 @@ const puppeteer = require('puppeteer');
           
       }else if(contadorTd === 4){
         conteudosTD2.push(textoTd);
-        break; // Encontrou o sexto <td> após "9", então saia do loop
+        break; 
       }
       
     }
   }
   
   if (encontrouNove) {
-    if(conteudosTD[1] === 'Em aberto'){
-      console.log("Ainda não foi chamado!");
+    
+    if(conteudosTD2[1] === 'Em aberto'){
+      console.log("O primeiro candidato "+ conteudosTD2[0] +" ainda não foi chamado!");
+    }else{
+      console.log("O primeiro candidato foi chamado!");
     }
-    console.log('Conteúdo do sexto <td> após "9":', conteudosTD[0], conteudosTD[1], conteudosTD2[0], conteudosTD2[1]);
+    
+    if(conteudosTD[1] === 'Em aberto'){
+      console.log("Eu (" + conteudosTD[0] + ") ainda não fui chamado!");
+    }else{
+      console.log("Parabéns "+ conteudosTD[0]+ "! Fui chamado!");
+    }
+    
   } else {
-    console.log('O valor "9" não foi encontrado na página.');
+    console.log('O TD requerido não foi encontrado na página.');
   }
 
   await browser.close();
