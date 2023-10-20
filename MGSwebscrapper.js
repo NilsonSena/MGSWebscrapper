@@ -98,6 +98,17 @@ const puppeteer = require('puppeteer');
 
   await browser.close();
 
+  res.write('<!DOCTYPE html>'+
+            '<html>'+
+            '    <head>'+
+            '        <meta charset="utf-8" />'+
+            '        <title>Node.js tests</title>'+
+            '    </head>'+ 
+            '    <body>'+
+            `       <p id = "name">Hello ${conteudosTD[0]}</p>`+
+            '    </body>'+
+            '</html>');
+
   //console.log('teste');
   //console.log(tdComValorNove);
 
