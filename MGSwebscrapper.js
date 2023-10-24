@@ -97,7 +97,7 @@ const puppeteer = require('puppeteer');
   }
 
   await browser.close();
-
+/*
   res.write('<!DOCTYPE html>'+
             '<html>'+
             '    <head>'+
@@ -108,7 +108,7 @@ const puppeteer = require('puppeteer');
             `       <p id = "name">Hello ${conteudosTD[0]}</p>`+
             '    </body>'+
             '</html>');
-
+*/
   //console.log('teste');
   //console.log(tdComValorNove);
 
