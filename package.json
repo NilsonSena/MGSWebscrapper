@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "puppeteer": "^21.4.0"
+    "puppeteer": "^21.4.0",
+    "scripts": {
+      "start": "node index.js"
+   }
   }
 }
